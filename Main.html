@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guitars</title>
+    <style>
+
+        .a-Clickable {
+            color: black;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        .div-Header {;
+            margin-top: -10px;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 120px;
+            background: #000000;
+            border: 1px solid #000000;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            position: sticky;
+        }
+
+        .img_standard {
+            width: 224px;
+            height: 70px;
+            left: 608px;
+            position: absolute;
+            top:30px;
+            border-radius: 15px;
+            border: solid lightseagreen 3px;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .img_small {
+            width: 60px;
+            height: 60px;
+            top: 30px; position: absolute;
+            background-color: white;
+        }
+
+        .div-searchbar {
+            position: absolute;
+            width: 100%;
+            height: 66px;
+            left: 0;
+            top: 120px;
+            background: seashell;
+        }
+
+        .div-Slider {
+            position: absolute;
+            width: 100%;
+            height:70%;
+            left: 0;
+            top: 186px;
+
+            background: #000000;
+        }
+
+        .input_search {
+            box-sizing: border-box;
+            margin-top: 0.5%;
+            margin-left: 34%;
+            width: 500px;
+            height: 40px;
+            left: 467px;
+            top: 124px;
+            border-radius: 20px;
+            background: #FFFFFF;
+            border: 3px solid #000000;
+            padding: 20px;
+
+        }
+
+        .button_Slider {
+            width: 75px;
+            height: 65px;
+
+            margin-top: 175px;
+        }
+
+        .image_Sliding {
+
+            width: 264px;
+            height: 332px;
+            left: 8px;
+            top: 6px;
+            position: relative;
+        }
+
+        .imageWrapper {
+            position: absolute;
+            width: 280px;
+            height: 345px;
+            margin-top: -10%;
+            background-color: black;
+
+        }
+
+        .textHolder {
+            position: absolute;
+            top: 40%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.2s;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+        }
+
+        .imageWrapper:hover .textHolder {
+            visibility: visible;
+            opacity: 1;
+
+
+        }
+
+        body {
+            margin: 0
+        }
+
+        .products {
+            margin-top: 40%;
+            width: 80%;
+            height: 80%;
+            position: absolute;
+
+            display: flex;
+        }
+
+       .imageWrapper2 {
+            width: 250px;
+            height: 200px;
+            background: linear-gradient(#006ba9, deepskyblue);
+            margin: 20px;
+            border-radius: 3px;
+            opacity: 90%;
+            font-weight: bold;
+            font-size: 100%;
+            font-family: Bahnschrift,fantasy;
+        }
+        .textHolder2{
+            position: absolute;
+            width: 21%;
+            height: 14%;
+            margin-top:  -4.8%;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.2s;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;}
+
+        .imageWrapper2:hover .textHolder2 {
+            visibility: visible;
+            opacity: 100%;
+
+
+        }
+        .image3 {
+            height: 150px;
+            width: 150px;
+           margin-top: 10px;
+            margin-left: 20%;
+            border: solid black 4px;
+            border-radius: 6px;
+        }
+
+        .footer {
+            margin-top: 85%;
+            background: radial-gradient(#006ba9, deepskyblue);
+            width: auto;
+            margin-bottom: -15px;
+            font-size: 1.4vw;
+            padding: 20px;
+            font-weight: bold;
+            position: relative;
+            font-family: Bahnschrift,fantasy;
+
+        }
+
+        a{
+            text-decoration: none; color: black}
+
+
+        input:focus{background-color: orange; opacity: 0.9}
+@media screen and(max-width: 500px) {
+    div.div-Slider{height: 40%;}
+}
+    </style>
+
+</head>
+<div class="div-Header">
+
+    <img src="res/menu_icon.png" class="img_small" style="margin: 5px 5px 45px 2%;">
+    <div style="text-align: center;">
+    <img src="res/LOGO.png" class="img_standard" >
+    </div>
+
+</div>
+<body style="">
+
+<div class="div-searchbar">
+    <label>
+        <input type="text" placeholder="Search" class="input_search">
+    </label>
+
+</div>
+<div class="div-Slider" style="background-image: url('res/bgr.jpg')"    >
+    <!--Slider-->
+    <div style="height: 39%;width: 100%; margin-top: 20%;">
+    <div  class="imageWrapper" id="main1" style="margin-left: 10%"  >
+        <a href="product.html" id="1" onclick="localStorage.setItem( 'current', this.id);">
+    <img src="/res/prod1/MAIN.png" class="image_Sliding"  alt=""  >
+        </a>
+        <div class="textHolder" >
+
+            <pre>
+Esp Alexi E-Scythe
+Description:
+A real classic is sold here.
+            </pre>
+
+        </div>
+
+    </div>
+    <div class="imageWrapper" id="main2" style="margin-left: 40%">
+        <a href="product.html" id="2" onclick="localStorage.setItem( 'current', this.id);">
+            <img src="/res/prod2/prod2.jpg" class="image_Sliding"  alt=""  >
+        </a>
+
+        <div class="textHolder">
+            <pre>
+Ibanez RG5120
+A classic from Ibanez.
+Is manufactured
+with the 80's
+Shred in mind
+            </pre>
+        </div>
+
+    </div>
+    <div class="imageWrapper" id="main3" style="margin-left: 70%">
+        <a href="product.html" id="3" onclick="localStorage.setItem( 'current', this.id);">
+            <img src="/res/prod3/prod3.jpg" class="image_Sliding"  alt="" > </a>
+            <div class="textHolder">
+<pre>
+Trivium frontman's
+signature guitar
+
+
+
+</pre>
+
+
+            </div>
+
+        </div>
+
+</div>
+    <hr style="border: solid black 5px; background-color: black">
+</div>
+
+<div style="margin-left: 11%">
+<div class="products">
+    <div class="imageWrapper2">
+        <img src="res/assets/cleaner.jpg" class="image3">
+
+
+       <center>Cleaning substances</center>
+    </div>
+    <div class="imageWrapper2">
+        <img src="res/assets/Picks.jpg" class="image3">
+
+
+        <center>Picks</center>
+    </div>
+    <div class="imageWrapper2">
+        <img src="res/assets/Strings.jpg" class="image3">
+
+
+        <center>Strings</center>
+    </div>
+    <div class="imageWrapper2">
+        <img src="res/assets/guitar.jpg" class="image3">
+
+
+        <center>
+                Guitars</center>
+    </div>
+</div>
+
+<div class="products" style="top :45%;">
+    <div class="imageWrapper2">
+
+        <img src="res/assets/amp.png" class="image3" style="background: white">
+
+        <center>Amplifiers</center>
+    </div>
+    <div class="imageWrapper2">
+
+        <img src="res/assets/accessories.jpg" class="image3">
+
+
+        <center>Accessories</center>
+    </div>
+    <div class="imageWrapper2">
+        <img src="res/assets/bass.png" class="image3">
+
+
+        <center>Basses</center>
+    </div>
+    <div class="imageWrapper2">
+
+        <img src="res/assets/Other.webp" class="image3">
+        <center>Other</center>
+    </div>
+
+</div></div>
+<div class="footer" >
+    <hr style="border: solid black 5px; background-color: black;">
+    <pre>
+<a href="Main.html">
+Music Store.INC</a>
+Contacts
+About US
+Customer Service
+
+    </pre>
+</div>
+
+
+
+
+</body>
+</html>

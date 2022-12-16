@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/scripts/script.js"></script>
+    <style>   .footer {
+        margin-top: 32%;
+        background: linear-gradient( deepskyblue,#006ba9);
+        width: auto;
+        margin-bottom: -15px;
+        font-size: 1.4vw;
+        padding: 20px;
+        font-weight: bold;
+        position: relative;
+        font-family: Bahnschrift,fantasy;
+
+    }
+        body{ padding: 0; margin: 0; box-sizing: border-box;}
+        .div-Header{
+
+            padding:0;
+
+            height: 120px;
+            background: #000000;
+            border: 1px solid #000000;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+            position: sticky;
+            left: 0;
+            right: 0;
+        }
+        .img_standard{width: 224px;
+            height: 70px;
+            left: 608px;
+            top: 25px;
+            border-radius: 15px;
+            border:solid lightseagreen 3px;
+
+        }
+        .img_small{width: 50px;
+            height: 50px;
+            border-radius: 2px;
+        }
+        .images{
+           background: linear-gradient(deeppink, deepskyblue);
+            width: 100%;
+            height: 65%;
+            left: 0;
+            position: absolute;
+
+        }
+        .img_Large{
+            margin-top: 20px;
+            width: 42%;
+            height: 20%;
+            margin-left: 30%;
+            position: relative;
+            border: solid black 5px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .smallSlider {
+            width: 41%;
+            background-color: black;
+            margin-left: 30%;
+            position: absolute;
+            border: solid dimgrey 5px;
+            padding: 3px;
+        }
+
+        .text {
+            margin-left: 2%;
+            font-size: 1.1vw;
+            position: absolute;
+            margin-top: 3%;
+            background-color: white;
+            padding: 3px;
+            border: solid black 2px;
+            border-radius: 10px;
+            margin-inside: 5px;
+        }
+        .text2 {
+            left: 80%;
+            font-size: 1.1vw;
+            position: absolute;
+            margin-top: 3%;
+            background-color: white;
+            padding: 3px;
+            border: solid black 2px;
+            border-radius: 10px;
+            margin-inside: 5px;
+        }
+        body {
+            margin: 0
+        }
+
+        @media screen and (min-width: 1200px) {
+        .img_Large{
+            height: 60%;
+            width: 41%;
+        }
+        .smallSlider{width: 41%}
+        }
+
+    </style>
+
+        </head>
+<body>
+<div class="div-Header">
+
+    <img src="res/menu_icon.png" class="img_small" style="margin: 5px 5px 45px 2%;">
+
+
+
+    <img src="res/LOGO.png" class="img_standard" style="margin: 15px 5px 55px 36%;" onclick=" document.location.href = 'Main.html';">
+
+</div>
+<div class="images">
+        <div class="text" style="width: 20%"> <h2 id = "text"></h2>
+            <strong>Description :</strong><br>
+                <h4 style="font-weight: normal " id = 'description'></h4>
+        </div>
+        <div class="text2" > <h2 id = "text2"></h2>
+            <center>
+
+        <img src="res/basket.png" id = 'basket' style="height: 70px; width:70px">
+            <br><strong>Buy</strong>
+            </center>
+
+        </div>
+
+
+        <img src="" class="img_Large" id = "main-img">
+
+<div class="smallSlider" id = 'smallSlider'> <script>
+    let Item = findById(parseInt(localStorage.getItem('current')));
+    document.getElementById('description').textContent = Item.description;
+    document.getElementById('text').textContent = Item.name
+    document.getElementById('text2').textContent = 'Price\n' +  Item.price + "  €";
+    for (let i = 1; i < 11; i++) {
+
+        let tmp = document.createElement('img');
+        tmp.setAttribute('src', Item.images[i]);
+        tmp.className = 'img_small';
+        tmp.style.marginLeft = '6px'
+        tmp.style.marginRight = '6px'
+        tmp.style.marginTop = '4px'
+
+        tmp.id = "img " + i + 1
+        if(i < Item.images.length) {
+            tmp.addEventListener("click", function () {
+                let c = document.getElementById('main-img').getAttribute('src');
+                document.getElementById('main-img').setAttribute('src', this.getAttribute('src'))
+                this.setAttribute('src', c);
+            })
+        } else {
+            tmp.setAttribute('src', 'res/download.png');
+
+        }
+
+        document.getElementById('smallSlider').appendChild(tmp);
+    }
+    document.getElementById('main-img').setAttribute('src',Item.images[0]);
+</script> </div>
+
+</div>
+<div class="footer" >
+    <hr style="border: solid black 5px; background-color: black;">
+    <pre>
+<a href="Main.html">
+Music Store.INC</a>
+Contacts
+About US
+Customer Service
+
+    </pre>
+</div>
+
+</body>
+</html>
